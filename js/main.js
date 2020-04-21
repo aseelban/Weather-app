@@ -14,12 +14,12 @@ const weatherConditions = async () => {
 
     try{
         //! get user location
-        const req_location = await fetch("//ipinfo.io/json?token=d4bfd8974aedae")
+        const req_location = await fetch("https://ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
         _country = await zObj.country;
 
-        const req = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${_city},${_country}&appid=43d2faad6ff934ab2c8b736939e7d695&units=imperial`)
+        const req = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${_city},${_country}&appid=43d2faad6ff934ab2c8b736939e7d695&units=imperial`)
 
          cObj = await req.json();
 
@@ -43,13 +43,13 @@ const forecarst = async () => {
     try{
 
         //! get user location
-        const req_location = await fetch("//ipinfo.io/json?token=d4bfd8974aedae")
+        const req_location = await fetch("https://ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
         _country = await zObj.country;
 
 
-        const req = await fetch(`//api.openweathermap.org/data/2.5/forecast?q=${_city},${_country}&appid=d22082e41329a80a63316b0d28f898ec&units=imperial`)
+        const req = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${_city},${_country}&appid=d22082e41329a80a63316b0d28f898ec&units=imperial`)
 
         fObj = await req.json();
 
