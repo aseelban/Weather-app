@@ -14,7 +14,7 @@ const weatherConditions = async () => {
 
     try{
         //! get user location
-        const req_location = await fetch("http://ipinfo.io/json?token=d4bfd8974aedae")
+        const req_location = await fetch("//ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
         _country = await zObj.country;
@@ -43,7 +43,7 @@ const forecarst = async () => {
     try{
 
         //! get user location
-        const req_location = await fetch("http://ipinfo.io/json?token=d4bfd8974aedae")
+        const req_location = await fetch("//ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
         _country = await zObj.country;
