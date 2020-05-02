@@ -1,15 +1,12 @@
 'use strict';
 
-const log = console.log;
 
-let cObj;
-let fObj;
-let zObj;
-var _city;
-var _country;
+let cObj, fObj, zObj;
+let _city , _country
 
 
-//! get days
+
+//  Get days - the next two days
 let __nDate = new Date();
 let __lDate = new Date();
 
@@ -20,11 +17,11 @@ let nDay = __nDate.toString().substr(0, 3);
 let lDay = __lDate.toString().substr(0, 3);
 
 
-//! GET THE CONDITIONS
+//  GET THE CONDITIONS
 const weatherConditions = async () => {
 
     try {
-        //! get user location
+        //  get user location
         const req_location = await fetch("https://ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
@@ -49,12 +46,12 @@ weatherConditions()
 
 
 
-// !GET THE FORECARST
+//  GET THE FORECARST
 const forecarst = async () => {
 
     try {
 
-        //! get user location
+        //  get user location
         const req_location = await fetch("https://ipinfo.io/json?token=d4bfd8974aedae")
         zObj = await req_location.json();
         _city = await zObj.city;
@@ -66,12 +63,12 @@ const forecarst = async () => {
         fObj = await req.json();
 
 
-        //! day 1
+        //  day 1
         var date_raw = fObj.list[0].dt_txt;
         date_raw = date_raw.substring(5, 11);
         document.getElementById('r1c1').innerHTML = `<span class="d-title">Today: </span>${date_raw}`;
 
-        //* set img icon
+        //  set img icon
         var iconcode = fObj.list[0].weather[0].icon;
         var icon_path = `//openweathermap.org/img/w/${iconcode}.png`;
         document.getElementById('r1c2').src = icon_path;
@@ -80,12 +77,12 @@ const forecarst = async () => {
         document.getElementById('r1c4').innerHTML = fObj.list[0].main.temp_max + '&deg';
 
 
-        //! day 2
+        //  day 2
         var date_raw = fObj.list[8].dt_txt;
         date_raw = date_raw.substring(5, 11);
         document.getElementById('r2c1').innerHTML = `<span class="d-title">${nDay}: </span>${date_raw}`;
 
-        //* set img icon
+        //  set img icon
         var iconcode = fObj.list[8].weather[0].icon;
         var icon_path = `//openweathermap.org/img/w/${iconcode}.png`;
         document.getElementById('r2c2').src = icon_path;
@@ -94,12 +91,12 @@ const forecarst = async () => {
         document.getElementById('r2c4').innerHTML = fObj.list[0].main.temp_max + '&deg';
 
 
-        //! day 3
+        //  day 3
         var date_raw = fObj.list[16].dt_txt;
         date_raw = date_raw.substring(5, 11);
         document.getElementById('r3c1').innerHTML = `<span class="d-title">${lDay}: </span>${date_raw}`;
 
-        //* set img icon
+        //  set img icon
         var iconcode = fObj.list[16].weather[0].icon;
         var icon_path = `//openweathermap.org/img/w/${iconcode}.png`;
         document.getElementById('r3c2').src = icon_path;
