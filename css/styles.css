@@ -12,7 +12,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+div, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -23,7 +23,7 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, div,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
@@ -85,7 +85,7 @@ header h2 {
   font-weight: 400;
   padding-top: .2rem; }
 
-header figure {
+header div {
   float: right;
   width: 80px;
   padding-right: 2%; 
@@ -93,13 +93,13 @@ header figure {
   bottom: 14px;
 }
 @media (max-width: 575.98px) { 
-  header figure {
+  header div {
     bottom: 19px;
 }
  }
 
 
-header figure img {
+header div img {
   width: 100%; }
 
 nav {
